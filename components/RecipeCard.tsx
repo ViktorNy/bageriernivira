@@ -1,18 +1,20 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import { View, StyleSheet, Text, ImageBackground, Button, TouchableOpacity } from "react-native";
 import { Recipe } from '../data'
 
 interface Props {
-    recipe: Recipe
+    recipe: Recipe,
+    onSetPage: (page: string, recipe: Recipe) => void
 }
 
-const RecipeCard: FC<Props> = ({ recipe }: Props) => {
-
+const RecipeCard: FC<Props> = ({ recipe, onSetPage }: Props) => {
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.imageStretch} source={{ uri: recipe.imageUrl }}>
-                <Text style={styles.nameStyle}>{recipe.name}</Text>
-            </ImageBackground>
+            <TouchableOpacity onPress={() => onSetPage('details', recipe)}>
+                <ImageBackground style={styles.imageStretch} source={{ uri: recipe.imageUrl }}>
+                    <Text style={styles.nameStyle}>{recipe.name}</Text>
+                </ImageBackground>
+            </TouchableOpacity>
         </View>
     )
 }
