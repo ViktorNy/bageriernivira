@@ -48,5 +48,4 @@ export const recipeArray: Recipe[] = [
         instructions: ['Sätt ugnen på 200°C.', 'Blanda mjöl, socker och bakpulver i en matberedare eller bunke. Tillsätt ägg och matfettet skuret i mindre bitar. Blanda snabbt ihop till en deg. Lägg upp degen på en mjölad arbetsbänk och arbeta in någon av smaksättningarna.', 'Dela degen i 4 bitar och rulla ut till rullar ca 30 cm. Lägg på en plåt med bakplåtspapper.', 'Grädda mitt i ugnen ca 20 minuter.', 'Sänk värmen till 100°C. Skär rullarna medan de är varma i sneda bitar direkt på plåten. Sätt in mitt i ugnen för att torka skorporna, ca 30 minuter med ugnsluckan på glänt.', 'Olika smaksättningar: 1 dl pinjenötter och rivet skal från 2 citroner eller 1 dl solroskärnor och 1-2 tsk stötta kardemummakärnor eller 1 dl grovhackad mandel och 100 g mörk choklad (för 30 stycken)'],
         imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_63269/cf_259/sommarskorpor.jpg'
     }
-}
 ]
