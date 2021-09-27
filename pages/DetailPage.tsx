@@ -13,7 +13,7 @@ interface Props {
 const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
     const speak = (textToSay: string) => {
-        Speech.speak(textToSay);
+        Speech.speak(textToSay, { language:"sv-SE"})
     };
 
     return (
