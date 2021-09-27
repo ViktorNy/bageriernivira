@@ -13,8 +13,7 @@ const Layout = () => {
     const [selectedRecipe, setRecipe] = useState<Partial<Recipe>>({});
 
     const goHome = (filter? : string) => {
-        setPage('home')
-        alert(filter);
+        setPage('home');
         filter ? setFilter(filter) : setFilter('all');
     }
 

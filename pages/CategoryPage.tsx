@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, View, ImageBackground, Text, Button, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { categories } from "../data";
 
 interface Prop {
     onGoBack: (filter?: string) => void;
@@ -9,19 +10,16 @@ interface Prop {
 const CategoryPage = ({ onGoBack }: Prop) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Button title='Tillbaka' onPress={ () => onGoBack()} />
+            <Button title='Tillbaka' onPress={() => onGoBack()} />
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <View style={styles.container}>
-                    <TouchableOpacity onPress={() => { onGoBack('pie') }}>
-                        <ImageBackground style={styles.imageStretch} source={{ uri: "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_103080/cf_259/appelpaj_med_mandelsmul.jpg" }}>
-                            <Text style={styles.nameStyle}>Pajer</Text>
-                        </ImageBackground>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { onGoBack('cookie') }}>
-                        <ImageBackground style={styles.imageStretch} source={{ uri: "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_30072/cf_259/chocolate_chip_cookies.jpg" }}>
-                            <Text style={styles.nameStyle}>Kakor</Text>
-                        </ImageBackground>
-                    </TouchableOpacity>
+                    {categories.map((cat) => (
+                        <TouchableOpacity key={cat.id} onPress={() => { onGoBack(cat.filterName) }}>
+                            <ImageBackground style={styles.imageStretch} source={{ uri: cat.image }}>
+                                <Text style={styles.nameStyle}>{cat.textName}</Text>
+                            </ImageBackground>
+                        </TouchableOpacity>
+                    ))}
                 </View>
             </ScrollView>
         </SafeAreaView>
