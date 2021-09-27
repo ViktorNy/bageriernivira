@@ -81,5 +81,11 @@ export const categories : Catagory[] = [
         filterName: 'cookie',
         textName: 'Kakor',
         image: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_30072/cf_259/chocolate_chip_cookies.jpg'
+    },
+    {
+        id: '3',
+        filterName: 'cake',
+        textName: 'Tårtor',
+        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-chocolate-peanut-butter-layer-cake-2-06eee24.jpg?quality=90&resize=500,454'
     }
 ]
