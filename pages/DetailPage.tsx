@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, Button, Image, Dimensions, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import { Text, Button, Image, Dimensions, StyleSheet, ScrollView } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Recipe } from '../data';
 
 interface Props {

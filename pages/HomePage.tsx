@@ -1,6 +1,7 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Recipe, recipeArray } from '../data';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
 
 
