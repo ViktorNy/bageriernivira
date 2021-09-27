@@ -1,5 +1,6 @@
 export interface Recipe {
     id: string,
+    category: string,
     name: string,
     description: string,
     ingredients: string[],
@@ -10,6 +11,7 @@ export interface Recipe {
 export const recipeArray: Recipe[] = [
     {
         id: '1',
+        category: 'pie',
         name: 'Melon- och myntapaj',
         description: 'Lyxig och god melon- och myntapaj som passar perfekt till efterrätt. Den söta piel de sapomelonen balanseras fint in i fyllningen med saft från limen och rostad kokos. ',
         ingredients: ['3 dl vetemjöl', '100 g smör eller margarin', '2 msk strösocker', '2 msk vatten', '1-2 lime', '1 1/2 dl vitt vin eller matlagningsvin', '1 dl vatten', '1/2 dl flytande honung', '2 1/2 msk majsstärkelse', '1 dl riven kokos', '1 piel de sapomelon (1 melon motsvarar ca 1 kg)', '1 kruka mynta', '2 msk finstrimlad samt till garnering', '2 dl crème fraiche', '1 msk florsocker', '1/2 tsk vaniljsocker'],
@@ -18,6 +20,7 @@ export const recipeArray: Recipe[] = [
     },
     {
         id: '2',
+        category: 'cookie',
         name: 'Sega kolakakor',
         description: 'Goda kolakakor är gärna lite sega i bettet, och det blir kakorna med det här enkla receptet. Sirap, farin och vanilj ger småkakorna den rätta smaken av kola. En populär kaka som går snabbt att baka och gillas av både stora och små.',
         ingredients: ['100 g smör eller margarin', '1 dl brun farin strö', '2 msk sirap', '2-3 tsk vaniljsocker', '1/2 tsk bikarbonat', '2dl vetemjöl (2 dl motsvarar 120 g'],
@@ -26,6 +29,7 @@ export const recipeArray: Recipe[] = [
     },
     {
         id: '3',
+        category: 'pie',
         name: 'Äppelpaj med mandelsmul',
         description: 'Snacka om paj på direkten! Strössla havregryn och mandelmassa över äppelklyftorna. Hyvla över smör och grädda. Variera smaken på äppelsmulpajen genom att byta ut kardemumma och kanel mot rivet skal av en citron eller strö över en näve russin.',
         ingredients: ['6 äpplen', '1/2 tsk stötta kardemummakärnor', '1/2tsk malen kanel', '200 g riven mandelmassa', '1 dl havregryn', '75 g smör'],
@@ -34,6 +38,7 @@ export const recipeArray: Recipe[] = [
     },
     {
         id: '4',
+        category: 'cookie',
         name: 'Chocolate chip cookies',
         description: 'Baka dessa underbara chocolate chip cookies med hasselnötter när du är sugen på riktigt goda kakor som har kort tillagningstid. Choklad och grovhackade nötter gör dessa chokladkakor ljuvliga.',
         ingredients: [' 100 g margarin (rumsvarmt)', '1 dl brun farin', '1/2 tsk vaniljsocker', '1 ägg', ' 2 dl vetemjöl', '1 tsk bakpulver', '1 krm salt', ' 100 g mörk blockchoklad', '50 g hasselnötter'],
@@ -42,6 +47,7 @@ export const recipeArray: Recipe[] = [
     },
     {
         id: '5',
+        category: 'cookie',
         name: 'Sommarskorpor',
         description: 'Om du tycker om knapriga, goda och perfekta skorpor så ska du testa det här receptet på sommarskorpor. Antingen bakar du efter grundreceptet eller utgår från det och smaksätter med till exempel mandel och choklad. Försvinnande gott!',
         ingredients: ['4 dl vetemjöl', '2 dl ljust muscovadoråsocker', '1 tsk bakpulver', '2 ägg', '75 g smör eller margarin'],

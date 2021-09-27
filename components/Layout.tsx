@@ -4,12 +4,19 @@ import { StyleSheet, View } from "react-native";
 import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
 import { Recipe } from "../data";
+import CategoryPage from "../pages/CategoryPage";
 
 
 const Layout = () => {
     const [page, setPage] = useState('home');
+    const [filter, setFilter] = useState('all');
     const [selectedRecipe, setRecipe] = useState<Partial<Recipe>>({});
-    const goHome = () => setPage('home');
+
+    const goHome = (filter? : string) => {
+        setPage('home')
+        alert(filter);
+        filter ? setFilter(filter) : setFilter('all');
+    }
 
     const setDetailPage = (page: string, recipe: Recipe) => {
         setPage(page);
@@ -18,8 +25,9 @@ const Layout = () => {
 
     const selectedPage = () => {
         switch (page) {
-            case 'home': return <HomePage onSetPage={setDetailPage} />;
-            case 'details': return <DetailPage onGoBack={goHome} recipe={selectedRecipe as Recipe} />;
+            case 'home': return <HomePage onSetDetailPage={setDetailPage} onSetPage = {setPage} filter = {filter} />;
+            case 'details': return <DetailPage onGoBack={goHome} recipe={selectedRecipe as Recipe} filter = {filter} />;
+            case 'category': return <CategoryPage onGoBack={goHome}/>
         }
     }
 

@@ -4,11 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Recipe } from '../data';
 
 interface Props {
-    onGoBack: () => void,
-    recipe: Recipe
+    onGoBack: (filter?: string) => void,
+    recipe: Recipe,
+    filter: string
 }
 
-const DetailPage = ({ onGoBack, recipe }: Props) => {
+const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
     return (
         <SafeAreaView style={styles.container}>
@@ -21,7 +22,7 @@ const DetailPage = ({ onGoBack, recipe }: Props) => {
                 <Text>{recipe.ingredients}</Text>
                 <Text style={styles.textStyle}>Gör så här</Text>
                 <Text>{recipe.instructions}</Text>
-                <Button title='Tillbaka' onPress={onGoBack} />
+                <Button title='Tillbaka' onPress={() => onGoBack(filter)} />
             </ScrollView>
         </SafeAreaView>
     )
