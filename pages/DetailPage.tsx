@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Button, Image, Dimensions, StyleSheet, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Recipe } from '../data';
+import * as Speech from 'expo-speech';
 
 interface Props {
     onGoBack: (filter?: string) => void,
@@ -11,8 +12,13 @@ interface Props {
 
 const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
+    const speak = (textToSay: string) => {
+        Speech.speak(textToSay);
+    };
+
     return (
         <SafeAreaView style={styles.container}>
+            <Button title='Tillbaka' onPress={() => onGoBack(filter)} />
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <Text>{recipe.name}</Text>
                 <Image source={{ uri: recipe.imageUrl }} style={{ width: Dimensions.get('screen').width * 0.7, height: 300 }} />
@@ -22,7 +28,7 @@ const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
                 <Text>{recipe.ingredients}</Text>
                 <Text style={styles.textStyle}>Gör så här</Text>
                 <Text>{recipe.instructions}</Text>
-                <Button title='Tillbaka' onPress={() => onGoBack(filter)} />
+                <Button title="Press to hear some words" onPress={() => speak(recipe.instructions.toString())} />
             </ScrollView>
         </SafeAreaView>
     )
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
     },
     opacity: {
         backgroundColor: '#DDDDDD'
-    }, 
+    },
     textStyle: {
         fontWeight: 'bold'
     }
