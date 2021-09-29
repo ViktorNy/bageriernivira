@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Button, Image, Dimensions, StyleSheet, SafeAreaView, ScrollView, useColorScheme } from 'react-native'
+import DarkMode from '../components/DarkMode';
 import { Recipe } from '../data';
 
 interface Props {
@@ -8,14 +9,7 @@ interface Props {
 }
 
 const DetailPage = ({ onGoBack, recipe }: Props) => {
-    let colorScheme = useColorScheme();
-    let themeTextStyle;
-
-    if (colorScheme === 'dark') {
-        themeTextStyle = styles.darkThemeText;
-    } else {
-        themeTextStyle = styles.lightThemeText;
-    }
+    let themeTextStyle = DarkMode();
 
     return (
         <SafeAreaView style={styles.container}>

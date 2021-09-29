@@ -1,22 +1,15 @@
 import React, { useState } from "react";
-import { View, StyleSheet, useColorScheme } from "react-native";
+import { View, StyleSheet } from "react-native";
 import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
 import { Recipe } from "../data";
+import DarkMode from "./DarkMode";
 
 const Layout = () => {
     const [page, setPage] = useState('home');
     const [selectedRecipe, setRecipe] = useState<Partial<Recipe>>({});
     const goHome = () => setPage('home');
-
-    let colorScheme = useColorScheme();
-    let themeContainerStyle;
-
-    if (colorScheme === 'dark') {
-        themeContainerStyle = styles.darkContainer;
-    } else {
-        themeContainerStyle = styles.lightContainer;
-    }
+    let themeContainerStyle = DarkMode();
 
     const setDetailPage = (page: string, recipe: Recipe) => {
         setPage(page);
@@ -42,13 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    lightContainer: {
-        backgroundColor: '#D0D0C0',
-    },
-    darkContainer: {
-        backgroundColor: '#242C40',
-    },
+    }
 });
 
 export default Layout;
