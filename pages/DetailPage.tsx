@@ -12,9 +12,21 @@ interface Props {
 
 const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
-    const speak = (textToSay: string) => {
-        Speech.speak(textToSay, { language:"sv-SE"})
-    };
+    const speak = (textToSay: string, counter?: number) => {
+
+        Speech.getAvailableVoicesAsync().then(voices => {
+            if (voices.length > 0) {
+                if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
+                    Speech.speak("Testar", { language: "sv-SE" });
+                }
+            }else{
+                if(!counter || counter < 10)
+                {
+                    speak(textToSay,  (counter ?? 0) + 1)
+                }
+            }
+        });
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -28,7 +40,6 @@ const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
                 <Text>{recipe.ingredients}</Text>
                 <Text style={styles.textStyle}>Gör så här</Text>
                 <Text>{recipe.instructions}</Text>
-                <Button title="Press to hear some words" onPress={() => speak(recipe.instructions.toString())} />
             </ScrollView>
         </SafeAreaView>
     )
