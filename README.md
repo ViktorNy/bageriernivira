@@ -38,7 +38,7 @@
 ## VG-Krav
 
  - [x]  Alla punkter för godkänt är uppfyllda
- - [x] React Navigation används för att skapa en bättre upplevelse i appen.
- - [x] Ytterligare en valfri extern modul används i projektet.
+ - [ ] React Navigation används för att skapa en bättre upplevelse i appen.
+ - [ ] Ytterligare en valfri extern modul används i projektet.
  - [x] Prototyper för applikation tas fram innan den implementeras. Bilder på prototypen
     skall finnas i projektet vid inlämning.
