@@ -1,20 +1,23 @@
 import { BlurView } from "expo-blur";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react"
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 interface IngredientProp {
   text: string;
+  speak: (text: string, counter?: number) => void;
 }
 
-const CustomCheckBox = ({ text }: IngredientProp) => {
+const CustomCheckBox = ({ text, speak }: IngredientProp) => {
   const [checked, onChange] = useState(false);
 
   return (
 
     <View key={text} style={styles.section}>
       <Checkbox value={checked} onValueChange={onChange} />
-      <Text style={checked ? styles.instructionStyleCrossed : styles.instructionStyle}>{text}</Text>
+      <TouchableOpacity onPress={() => speak(text)}>
+        <Text style={checked ? styles.instructionStyleCrossed : styles.instructionStyle}>{text}</Text>
+      </TouchableOpacity>
     </View>
   )
 }

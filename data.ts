@@ -30,8 +30,8 @@ export const recipeArray: Recipe[] = [
         category: 'cookie',
         name: 'Sega kolakakor',
         description: 'Goda kolakakor är gärna lite sega i bettet, och det blir kakorna med det här enkla receptet. Sirap, farin och vanilj ger småkakorna den rätta smaken av kola. En populär kaka som går snabbt att baka och gillas av både stora och små.',
-        ingredients: ['100 g smör eller margarin', '1 dl brun farin strö', '2 msk sirap', '2-3 tsk vaniljsocker', '1/2 tsk bikarbonat', '2dl vetemjöl (2 dl motsvarar 120 g'],
-        instructions: ['Sätt ugnen på 175C', 'Rör matfettet med farin, sirap och vanilj. Blanda mjölet med bikarbonaten och rör ner det och arbeta ihop till en deg.', 'Dela degen i 3 delar. Rulla ut varje del till en rulle ca 35 cm lång. Lägg dem på en plåt med bakplåtspapper. Tryck till rullarna med en gaffel.', 'Grädda mitt i ugnen ca 10 minuter. Skär dem i sneda bitar medans de är varma. Låt svalna på plåten.'],
+        ingredients: ['100 g smör eller margarin', '1 dl brun farin strö', '2 msk sirap', '2-3 tsk vaniljsocker', '1/2 tsk bikarbonat', '2dl vetemjöl (2 dl motsvarar 120 g)'],
+        instructions: ['Sätt ugnen på 175°C', 'Rör matfettet med farin, sirap och vanilj. Blanda mjölet med bikarbonaten och rör ner det och arbeta ihop till en deg.', 'Dela degen i 3 delar. Rulla ut varje del till en rulle ca 35 cm lång. Lägg dem på en plåt med bakplåtspapper. Tryck till rullarna med en gaffel.', 'Grädda mitt i ugnen ca 10 minuter. Skär dem i sneda bitar medans de är varma. Låt svalna på plåten.'],
         imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_62604/cf_259/sega_kolakakor.jpg'
     },
     {
