@@ -10,7 +10,6 @@ interface Props {
 const DetailPage = ({ onGoBack, recipe }: Props) => {
     let colorScheme = useColorScheme();
     let themeTextStyle;
-    console.log(colorScheme);
 
     if (colorScheme === 'dark') {
         themeTextStyle = styles.darkThemeText;
