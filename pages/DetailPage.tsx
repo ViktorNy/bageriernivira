@@ -28,7 +28,7 @@ const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
         Speech.getAvailableVoicesAsync().then(voices => {
             if (voices.length > 0) {
                 if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
-                    Speech.speak("Testar", { language: "sv-SE" });
+                    Speech.speak(textToSay, { language: "sv-SE" });
                 }
             }else{
                 if(!counter || counter < 10)
@@ -62,7 +62,7 @@ const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
         <Text style={styles.textStyle}>Gör så här</Text>
         <View style={styles.ingredientInstructionContainer}>
           {recipe.instructions.map((item) => (
-            <CustomCheckBox key={item} text={item} />
+              <CustomCheckBox key={item} text={item} speak={speak}/>
           ))}
         </View>
         
