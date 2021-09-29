@@ -49,7 +49,7 @@ const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
         </View>
         
         {/* <Text>{recipe.instructions}</Text> */}
-        <Button title="Tillbaka" onPress={onGoBack} />
+        <Button title="Tillbaka" onPress={() => onGoBack(filter)} />
       </ScrollView>
     </SafeAreaView>
 
