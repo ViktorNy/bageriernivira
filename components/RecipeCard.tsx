@@ -22,7 +22,7 @@ const RecipeCard: FC<Props> = ({ recipe, onSetPage }: Props) => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingTop: 50,
+        paddingTop: 10,
         position: 'relative'
     },
     imageStretch: {

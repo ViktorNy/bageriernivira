@@ -1,21 +1,40 @@
-import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Recipe, recipeArray } from '../data';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Button, Text } from 'react-native';
+import { categories, Recipe, recipeArray } from '../data';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
 
 
 interface Props {
-    onSetPage: (page: string, recipe: Recipe) => void;
+    onSetDetailPage: (page: string, recipe: Recipe) => void;
+    onSetPage:(page: string) => void;
+    filter: string;
 }
 
-const HomePage = ({ onSetPage }: Props) => {
+const HomePage = ({ onSetDetailPage: onSetDetailPage, onSetPage: onSetPage, filter: filter }: Props) => {
+
+
+    const [clonedRecipeArray, setClonedRecipeArray] = useState(recipeArray);
+    
+    useEffect(() => {
+        if (filter === 'all') {
+            setClonedRecipeArray(recipeArray);
+        }
+        else{
+            setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === filter));
+        }
+    }, [filter]);
 
     return (
         <SafeAreaView style={styles.container}>
+            <Button title="Kategorier" onPress={() => onSetPage('category')}/>
+
+            {/* Find better way to display category text*/}
+            <Text style={styles.categoryText}>{categories.find(x => x.filterName === filter)?.textName}</Text> 
+
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
-                {recipeArray.map((recipe) => (
-                    <RecipeCard onSetPage={onSetPage} recipe={recipe} key={recipe.id} />
+                {clonedRecipeArray.map((recipe) => (
+                    <RecipeCard onSetPage={onSetDetailPage} recipe={recipe} key={recipe.id} />
                 ))}
             </ScrollView>
         </SafeAreaView>
@@ -44,6 +63,11 @@ const styles = StyleSheet.create({
     },
     opacity: {
         backgroundColor: '#DDDDDD'
+    },
+    categoryText: {
+        color: 'black',
+        fontSize: 25,
+        paddingTop: 10,
     }
 });
 

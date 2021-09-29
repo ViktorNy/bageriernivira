@@ -14,16 +14,14 @@ import CustomInstruction from "../components/CustomInstruction";
 import { Recipe } from "../data";
 
 interface Props {
-  onGoBack: () => void;
-  recipe: Recipe;
+    onGoBack: (filter?: string) => void,
+    recipe: Recipe,
+    filter: string
 }
 
-const DetailPage = ({ onGoBack, recipe }: Props) => {
+const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
-
-  return (
-
-    
+  return (    
 
     <SafeAreaView style={styles.container}>
       <ScrollView
