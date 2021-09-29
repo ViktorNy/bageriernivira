@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   Button,
@@ -12,6 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
 import { Recipe } from "../data";
+import * as Speech from 'expo-speech';
 
 interface Props {
     onGoBack: (filter?: string) => void,
@@ -21,7 +23,23 @@ interface Props {
 
 const DetailPage = ({ onGoBack, recipe, filter }: Props) => {
 
-  return (    
+    const speak = (textToSay: string, counter?: number) => {
+
+        Speech.getAvailableVoicesAsync().then(voices => {
+            if (voices.length > 0) {
+                if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
+                    Speech.speak("Testar", { language: "sv-SE" });
+                }
+            }else{
+                if(!counter || counter < 10)
+                {
+                    speak(textToSay,  (counter ?? 0) + 1)
+                }
+            }
+        });
+    }
+
+  return (   
 
     <SafeAreaView style={styles.container}>
       <ScrollView
