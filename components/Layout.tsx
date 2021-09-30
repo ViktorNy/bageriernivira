@@ -22,18 +22,18 @@ const Layout = () => {
         setRecipe(recipe);
     }
 
-    const selectedPage = () => {
-        switch (page) {
-            case 'home': return <HomePage onSetDetailPage={setDetailPage} onSetPage = {setPage} filter = {filter} />;
-            case 'details': return <DetailPage onGoBack={goHome} recipe={selectedRecipe as Recipe} filter = {filter} />;
-            case 'category': return <CategoryPage onGoBack={goHome}/>
-        }
-    }
+    // const selectedPage = () => {
+    //     switch (page) {
+    //         // case 'home': return <HomePage onSetDetailPage={setDetailPage} onSetPage = {setPage} filter = {filter} />;
+    //         case 'details': return <DetailPage recipe={selectedRecipe as Recipe} filter = {filter} />;
+    //         case 'category': return <CategoryPage onGoBack={goHome}/>
+    //     }
+    // }
 
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            {selectedPage()}
+            {/* {selectedPage()} */}
         </View>
     )
 }
