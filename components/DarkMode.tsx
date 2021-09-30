@@ -13,18 +13,13 @@ const DarkMode = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     lightContainer: {
-        backgroundColor: '#D0D0C0',
-        color: '#242C40',
+        backgroundColor: 'white',
+        color: 'black',
     },
     darkContainer: {
         backgroundColor: '#242C40',
-        color: '#D0D0C0',
+        color: 'white',
     },
 });
 
