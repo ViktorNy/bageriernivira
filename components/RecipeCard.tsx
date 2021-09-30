@@ -1,16 +1,18 @@
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { FC } from "react";
 import { View, StyleSheet, Text, ImageBackground, TouchableOpacity } from "react-native";
 import { Recipe } from '../data'
+import { RecipeStackListParams, RecipeStackScreenProx } from "../navigation/Navigator";
 
 interface Props {
     recipe: Recipe,
-    onSetPage: (page: string, recipe: Recipe) => void
+    navigator: NativeStackNavigationProp<RecipeStackListParams, 'Home'>
 }
 
-const RecipeCard: FC<Props> = ({ recipe, onSetPage }: Props) => {
+const RecipeCard: FC<Props> = ({ recipe, navigator }: Props) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => onSetPage('details', recipe)}>
+            <TouchableOpacity onPress={() => navigator.navigate('Detail', {recipe: recipe})}>
                 <ImageBackground style={styles.imageStretch} source={{ uri: recipe.imageUrl }}>
                     <Text style={styles.nameStyle}>{recipe.name}</Text>
                 </ImageBackground>
@@ -22,7 +24,7 @@ const RecipeCard: FC<Props> = ({ recipe, onSetPage }: Props) => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingTop: 50,
+        paddingTop: 10,
         position: 'relative',
         alignContent: 'center',
         alignItems: 'center'

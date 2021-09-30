@@ -1,15 +1,19 @@
-import React from 'react';
-import Layout from './components/Layout';
 import { useKeepAwake } from 'expo-keep-awake';
+import { usePreventScreenCapture } from 'expo-screen-capture';
 import { StatusBar } from 'expo-status-bar';
-import { AppearanceProvider } from 'react-native-appearance';
+import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Layout from './components/Layout';
+import { Navigator } from './navigation/Navigator';
 
 export default function App() {
   useKeepAwake();
+  usePreventScreenCapture();
   return (
-    <AppearanceProvider>
-      <StatusBar hidden />
-      <Layout />
-    </AppearanceProvider>
+    <SafeAreaProvider>
+      <StatusBar hidden /><Navigator />
+    </SafeAreaProvider>
   );
 }
+
+

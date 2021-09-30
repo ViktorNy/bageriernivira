@@ -1,20 +1,29 @@
-import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { Recipe, recipeArray } from '../data';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Button, Text } from 'react-native';
+import { categories, Recipe, recipeArray } from '../data';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
+import { RecipeStackScreenProx } from '../navigation/Navigator';
 
-
-interface Props {
-    onSetPage: (page: string, recipe: Recipe) => void;
-}
-
-const HomePage = ({ onSetPage }: Props) => {
+const HomePage = ({  navigation, route }: RecipeStackScreenProx<'Home'>) => {
+    const [clonedRecipeArray, setClonedRecipeArray] = useState(recipeArray);
+    
+    useEffect(() => {
+        if (route.params.filter === 'all' || !route.params.filter) {
+            setClonedRecipeArray(recipeArray);
+        }
+        else{
+            setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === route.params.filter));
+        }
+    }, [route.params.filter]);
+    
 
     return (
         <SafeAreaView style={styles.container}>
+            {/* Find better way to display category text*/}
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
-                {recipeArray.map((recipe) => (
-                    <RecipeCard onSetPage={onSetPage} recipe={recipe} key={recipe.id} />
+                {clonedRecipeArray.map((recipe) => (
+                    <RecipeCard navigator={navigation} recipe={recipe} key={recipe.id} />
                 ))}
             </ScrollView>
         </SafeAreaView>
@@ -34,8 +43,18 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         marginLeft: 10,
-        marginRight: 10,
+        marginRight: 10
+    },
+    opacity: {
+        backgroundColor: '#DDDDDD'
+    },
+    categoryText: {
+        color: 'black',
+        fontSize: 25,
+        paddingTop: 10,
     }
 });
+
+// {categories.find(x => x.filterName === route.params.filter)?.textName}
 
 export default HomePage
