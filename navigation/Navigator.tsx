@@ -7,7 +7,6 @@ import CategoryPage from "../pages/CategoryPage";
 import DetailPage from "../pages/DetailPage";
 import HomePage from "../pages/HomePage";
 import Switch from 'expo-dark-mode-switch';
-import { useColorScheme } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 

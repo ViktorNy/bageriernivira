@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     ingredientInstructionContainer: {
         display: "flex",
         textAlign: "center",
-        // marginLeft: 10,
     },
 });
 

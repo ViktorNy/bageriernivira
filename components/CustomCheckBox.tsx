@@ -1,5 +1,4 @@
-import { DarkTheme, DefaultTheme, useTheme } from "@react-navigation/native";
-import { BlurView } from "expo-blur";
+import { useTheme } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react"
 import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from "react-native";

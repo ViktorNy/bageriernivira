@@ -56,6 +56,4 @@ const styles = StyleSheet.create({
     }
 });
 
-// {categories.find(x => x.filterName === route.params.filter)?.textName}
-
 export default HomePage
