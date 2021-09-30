@@ -4,22 +4,24 @@ import { categories, Recipe, recipeArray } from '../data';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
 import { RecipeStackScreenProx } from '../navigation/Navigator';
+import DarkMode from '../components/DarkMode';
 
-const HomePage = ({  navigation, route }: RecipeStackScreenProx<'Home'>) => {
+const HomePage = ({ navigation, route }: RecipeStackScreenProx<'Home'>) => {
     const [clonedRecipeArray, setClonedRecipeArray] = useState(recipeArray);
-    
+    let { themeContainerStyle } = DarkMode();
+
     useEffect(() => {
         if (route.params.filter === 'all' || !route.params.filter) {
             setClonedRecipeArray(recipeArray);
         }
-        else{
+        else {
             setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === route.params.filter));
         }
     }, [route.params.filter]);
-    
+
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, themeContainerStyle]}>
             {/* Find better way to display category text*/}
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 {clonedRecipeArray.map((recipe) => (
