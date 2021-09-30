@@ -2,6 +2,7 @@ import { BlurView } from "expo-blur";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react"
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import DarkMode from "./DarkMode";
 
 interface IngredientProp {
   text: string;
@@ -10,13 +11,13 @@ interface IngredientProp {
 
 const CustomCheckBox = ({ text, speak }: IngredientProp) => {
   const [checked, onChange] = useState(false);
-
+  let { checkBoxStyle, themeContainerStyle } = DarkMode();
   return (
 
     <View key={text} style={styles.section}>
-      <Checkbox value={checked} onValueChange={onChange} />
+      <Checkbox color={checkBoxStyle?.color} value={checked} onValueChange={onChange} />
       <TouchableOpacity onPress={() => speak(text)}>
-        <Text style={checked ? styles.instructionStyleCrossed : styles.instructionStyle}>{text}</Text>
+        <Text style={[checked ? styles.instructionStyleCrossed : styles.instructionStyle, themeContainerStyle]}>{text}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -35,6 +36,9 @@ const styles = StyleSheet.create({
   instructionStyleCrossed: {
     textDecorationLine: 'line-through'
   },
+  checkBox: {
+    color: 'green'
+  }
 })
 
 export default CustomCheckBox;
