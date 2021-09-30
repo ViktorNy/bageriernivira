@@ -1,13 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import DarkMode from "./DarkMode";
+import { getColorScheme } from "./DarkMode";
 
 interface InstructionProp {
   text: string;
 }
 
 const CustomInstruction = ({ text }: InstructionProp) => {
-  let { themeContainerStyle } = DarkMode();
+  let { themeContainerStyle } = getColorScheme();
   return (
     <View key={text} style={styles.section}>
 

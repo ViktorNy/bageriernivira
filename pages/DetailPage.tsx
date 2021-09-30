@@ -11,12 +11,11 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
-import DarkMode from '../components/DarkMode';
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
 const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     navigation.setOptions({ title: route.params.recipe.name }); // Fråga Davey Jones
-    let { themeContainerStyle } = DarkMode();
+
     const speak = (textToSay: string, counter?: number) => {
         Speech.getAvailableVoicesAsync().then(voices => {
             if (voices.length > 0) {
@@ -32,26 +31,25 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     }
 
     return (
-        <SafeAreaView style={[styles.container, themeContainerStyle]}>
+        <SafeAreaView style={styles.container}>
             <ScrollView
                 contentContainerStyle={styles.scrollViewContainer}
                 style={{ width: "100%" }}
             >
-                {/* <Text>{route.params.recipe.name}</Text> */}
                 <Image
                     source={{ uri: route.params.recipe.imageUrl }}
                     style={{ width: Dimensions.get("screen").width * 0.7, height: 300 }}
                 />
-                <Text style={[styles.textStyle, themeContainerStyle]}>Beskrivning</Text>
-                <Text style={[themeContainerStyle]}>{route.params.recipe.description}</Text>
-                <Text style={[styles.textStyle, themeContainerStyle]}>Ingredienser</Text>
+                <Text style={styles.textStyle}>Beskrivning</Text>
+                <Text>{route.params.recipe.description}</Text>
+                <Text style={styles.textStyle}>Ingredienser</Text>
                 <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.ingredients.map((item) => (
                         <CustomInstruction key={item} text={item} />
                     ))}
                 </View>
-                <Text style={[styles.textStyle, themeContainerStyle]}>Gör så här</Text>
-                <View style={[styles.ingredientInstructionContainer, themeContainerStyle]}>
+                <Text style={styles.textStyle}>Gör så här</Text>
+                <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.instructions.map((item) => (
                         <CustomCheckBox key={item} text={item} speak={speak} />
                     ))}

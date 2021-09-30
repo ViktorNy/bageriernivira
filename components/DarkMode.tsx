@@ -1,17 +1,20 @@
-import { useColorScheme, StyleSheet } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 
-const DarkMode = () => {
-    let colorScheme = 'dark';
-    let themeContainerStyle;
-    let checkBoxStyle;
+export const getColorScheme = () => {
+    return { themeContainerStyle, checkBoxStyle }
+}
+const DarkMode = (darkMode?: boolean) => {
+    let dark = darkMode;
 
-    if (colorScheme === 'dark') {
+
+    if (dark) {
         themeContainerStyle = styles.darkContainer
         checkBoxStyle = styles.checkBox
+        console.log(dark)
     } else {
         themeContainerStyle = styles.lightContainer
     }
-    return { themeContainerStyle, checkBoxStyle }
 }
 
 const styles = StyleSheet.create({
@@ -27,5 +30,8 @@ const styles = StyleSheet.create({
         color: '#bdc1c6',
     }
 });
+
+let themeContainerStyle: { backgroundColor: string, color: string } = styles.lightContainer;
+let checkBoxStyle: { color: string };
 
 export default DarkMode;

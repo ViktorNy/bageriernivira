@@ -10,7 +10,7 @@ const CategoryPage = ({ navigation }: RecipeStackScreenProx<'Category'>) => {
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <View style={styles.container}>
                     {categories.map((cat) => (
-                        <TouchableOpacity key={cat.id} onPress={() => navigation.navigate('Home', {filter: cat.filterName})}>
+                        <TouchableOpacity key={cat.id} onPress={() => navigation.navigate('Home', { filter: cat.filterName })}>
                             <ImageBackground style={styles.imageStretch} source={{ uri: cat.image }}>
                                 <Text style={styles.nameStyle}>{cat.textName}</Text>
                             </ImageBackground>
