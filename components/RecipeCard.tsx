@@ -1,8 +1,8 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { FC } from "react";
-import { View, StyleSheet, Text, ImageBackground, TouchableOpacity } from "react-native";
-import { Recipe } from '../data'
-import { RecipeStackListParams, RecipeStackScreenProx } from "../navigation/Navigator";
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Recipe } from '../data';
+import { RecipeStackListParams } from "../navigation/Navigator";
 
 interface Props {
     recipe: Recipe,

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, View, ImageBackground, Text, Button, TouchableOpacity } from 'react-native';
+import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { categories } from "../data";
 import { RecipeStackScreenProx } from "../navigation/Navigator";

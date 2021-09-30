@@ -3,7 +3,6 @@ import { usePreventScreenCapture } from 'expo-screen-capture';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Layout from './components/Layout';
 import { Navigator } from './navigation/Navigator';
 
 export default function App() {
