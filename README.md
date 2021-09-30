@@ -1,5 +1,7 @@
 # <p align = "center">Bageri Ernivira </p>
 
+![Ernivira](https://user-images.githubusercontent.com/71005696/135453045-09edb469-ec27-477c-8505-3335f75ac19c.png)
+
 ## <p align = "center">Beskrivning av projektet </p>
 
 ## Komponenter 
@@ -21,7 +23,8 @@
 + SafeAreaContext - https://docs.expo.dev/versions/v42.0.0/sdk/safe-area-context/
 + Speech - https://docs.expo.dev/versions/v42.0.0/sdk/speech/
 + StatusBar - https://docs.expo.dev/versions/v42.0.0/sdk/status-bar/
-+ Checkbox - https://docs.expo.dev/versions/v42.0.0/sdk/checkbox/
++ Checkbox - https://docs.expo.dev/versions/v42.0.0/sdk/checkbox/![Uploading Ernivira.png…]()
+
 + KeepAwake - https://docs.expo.dev/versions/v42.0.0/sdk/keep-awake/
 + ScreenCapture - https://docs.expo.dev/versions/v42.0.0/sdk/screen-capture/
 
