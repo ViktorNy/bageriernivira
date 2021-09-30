@@ -1,4 +1,6 @@
-# Bageri Ernivira
+# <p align = "center">Bageri Ernivira </p>
+
+## <p align = "center">Beskrivning av projektet </p>
 
 ## Komponenter 
 
