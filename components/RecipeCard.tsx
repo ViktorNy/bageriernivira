@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { FC } from "react";
-import { View, StyleSheet, Text, ImageBackground, Button, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, ImageBackground, TouchableOpacity } from "react-native";
 import { Recipe } from '../data'
 import { RecipeStackListParams, RecipeStackScreenProx } from "../navigation/Navigator";
 
@@ -25,18 +25,28 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         paddingTop: 10,
-        position: 'relative'
+        position: 'relative',
+        alignContent: 'center',
+        alignItems: 'center'
     },
     imageStretch: {
-        width: '100%',
+        minWidth: '95%',
         height: 200,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderRadius: 1,
+        overflow: "hidden",
+        shadowColor: "black",
+        elevation: 5,
     },
     nameStyle: {
         position: 'absolute',
-        paddingLeft: 10,
+        padding: 5,
         backgroundColor: 'rgba(255,255,255,0.7)',
-        color: 'black'
+        color: 'black',
+        width: '100%',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 })
 

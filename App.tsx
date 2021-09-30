@@ -12,7 +12,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <StatusBar hidden /><Navigator />
-    </SafeAreaProvider> // Kanske ta bort jsx argument?
+    </SafeAreaProvider>
   );
 }
 

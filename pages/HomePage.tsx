@@ -33,16 +33,11 @@ const HomePage = ({  navigation, route }: RecipeStackScreenProx<'Home'>) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
         padding: 20,
-        flexDirection: 'column'
-    },
-    scrollView: {
-        backgroundColor: 'pink',
-        marginHorizontal: 20,
+        flexDirection: 'column',
     },
     scrollViewContainer: {
         display: 'flex',

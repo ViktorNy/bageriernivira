@@ -1,4 +1,7 @@
-
+import React from 'react';
+import { Text, Button, Image, Dimensions, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import DarkMode from '../components/DarkMode';
+import { Recipe } from '../data';
 import * as Speech from 'expo-speech';
 import React from "react";
 import {
