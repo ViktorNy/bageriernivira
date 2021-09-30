@@ -2,19 +2,15 @@ import React from "react";
 import { ScrollView, StyleSheet, View, ImageBackground, Text, Button, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { categories } from "../data";
+import { RecipeStackScreenProx } from "../navigation/Navigator";
 
-interface Prop {
-    onGoBack: (filter?: string) => void;
-}
-
-const CategoryPage = ({ onGoBack }: Prop) => {
+const CategoryPage = ({ navigation }: RecipeStackScreenProx<'Category'>) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Button title='Tillbaka' onPress={() => onGoBack()} />
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <View style={styles.container}>
                     {categories.map((cat) => (
-                        <TouchableOpacity key={cat.id} onPress={() => { onGoBack(cat.filterName) }}>
+                        <TouchableOpacity key={cat.id} onPress={() => navigation.navigate('Home', {filter: cat.filterName})}>
                             <ImageBackground style={styles.imageStretch} source={{ uri: cat.image }}>
                                 <Text style={styles.nameStyle}>{cat.textName}</Text>
                             </ImageBackground>

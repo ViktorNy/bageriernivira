@@ -3,38 +3,27 @@ import { ScrollView, StyleSheet, Button, Text } from 'react-native';
 import { categories, Recipe, recipeArray } from '../data';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
+import { RecipeStackScreenProx } from '../navigation/Navigator';
 
-
-interface Props {
-    onSetDetailPage: (page: string, recipe: Recipe) => void;
-    onSetPage:(page: string) => void;
-    filter: string;
-}
-
-const HomePage = ({ onSetDetailPage: onSetDetailPage, onSetPage: onSetPage, filter: filter }: Props) => {
-
-
+const HomePage = ({  navigation, route }: RecipeStackScreenProx<'Home'>) => {
     const [clonedRecipeArray, setClonedRecipeArray] = useState(recipeArray);
     
     useEffect(() => {
-        if (filter === 'all') {
+        if (route.params.filter === 'all' || !route.params.filter) {
             setClonedRecipeArray(recipeArray);
         }
         else{
-            setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === filter));
+            setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === route.params.filter));
         }
-    }, [filter]);
+    }, [route.params.filter]);
+    
 
     return (
         <SafeAreaView style={styles.container}>
-            <Button title="Kategorier" onPress={() => onSetPage('category')}/>
-
             {/* Find better way to display category text*/}
-            <Text style={styles.categoryText}>{categories.find(x => x.filterName === filter)?.textName}</Text> 
-
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 {clonedRecipeArray.map((recipe) => (
-                    <RecipeCard onSetPage={onSetDetailPage} recipe={recipe} key={recipe.id} />
+                    <RecipeCard navigator={navigation} recipe={recipe} key={recipe.id} />
                 ))}
             </ScrollView>
         </SafeAreaView>
@@ -44,7 +33,7 @@ const HomePage = ({ onSetDetailPage: onSetDetailPage, onSetPage: onSetPage, filt
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -70,5 +59,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
     }
 });
+
+// {categories.find(x => x.filterName === route.params.filter)?.textName}
 
 export default HomePage
