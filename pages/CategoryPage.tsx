@@ -46,16 +46,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     imageStretch: {
-        marginBottom: 20,
-        width: '100%',
+        minWidth: '95%',
         height: 200,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderRadius: 1,
+        overflow: "hidden",
+        shadowColor: "black",
+        elevation: 5,
+        marginBottom: 10,
     },
     nameStyle: {
         position: 'absolute',
-        paddingLeft: 10,
+        padding: 5,
         backgroundColor: 'rgba(255,255,255,0.7)',
-        color: 'black'
+        color: 'black',
+        width: '100%',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 });
 

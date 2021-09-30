@@ -1,3 +1,4 @@
+import { useTheme } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import React from "react";
 import {
@@ -15,6 +16,7 @@ import { RecipeStackScreenProx } from "../navigation/Navigator";
 
 const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     navigation.setOptions({ title: route.params.recipe.name }); // Fråga Davey Jones
+    const { colors } = useTheme();
 
     const speak = (textToSay: string, counter?: number) => {
         Speech.getAvailableVoicesAsync().then(voices => {
@@ -40,15 +42,15 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
                     source={{ uri: route.params.recipe.imageUrl }}
                     style={{ width: Dimensions.get("screen").width * 0.7, height: 300 }}
                 />
-                <Text style={styles.textStyle}>Beskrivning</Text>
-                <Text>{route.params.recipe.description}</Text>
-                <Text style={styles.textStyle}>Ingredienser</Text>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Beskrivning</Text>
+                <Text style={{ color: colors.text }}>{route.params.recipe.description}</Text>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Ingredienser</Text>
                 <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.ingredients.map((item) => (
                         <CustomInstruction key={item} text={item} />
                     ))}
                 </View>
-                <Text style={styles.textStyle}>Gör så här</Text>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Gör så här</Text>
                 <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.instructions.map((item) => (
                         <CustomCheckBox key={item} text={item} speak={speak} />
@@ -62,7 +64,6 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         fontWeight: "bold",
+        fontSize: 16
     },
     Checkbox: {
         margin: 1,
