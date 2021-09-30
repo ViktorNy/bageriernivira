@@ -20,11 +20,7 @@ const HomePage = ({  navigation, route }: RecipeStackScreenProx<'Home'>) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Button title="Kategorier" onPress={() => navigation.navigate('Category')}/>
-
             {/* Find better way to display category text*/}
-            <Text style={styles.categoryText}></Text> 
-
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 {clonedRecipeArray.map((recipe) => (
                     <RecipeCard navigator={navigation} recipe={recipe} key={recipe.id} />

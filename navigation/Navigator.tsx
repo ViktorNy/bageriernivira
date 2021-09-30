@@ -1,7 +1,7 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack"
+import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { Button } from "react-native";
 import { Recipe } from "../data";
 import CategoryPage from "../pages/CategoryPage";
 import DetailPage from "../pages/DetailPage";
@@ -26,14 +26,16 @@ export const Navigator = () => {
                     name='Home'
                     component={HomePage}
                     initialParams={{ filter: 'all' }}
-                    options={({navigation}) => ({
+                    options={({ navigation }) => ({
                         title: 'Bageri Ernivira',
                         headerRight: () => (
-                            (<Button
-                            onPress={() => navigation.navigate('CategoryPage')}
-                            title="Info"
-                            color="black"
-                        />))
+                            (<MaterialIcons
+                                name="menu-book"
+                                size={24}
+                                color="black"
+                                onPress={() => navigation.navigate('Category')}
+                            />
+                            ))
                     })}
                 />
 
