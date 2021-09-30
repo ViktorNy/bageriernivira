@@ -14,12 +14,12 @@ const DarkMode = () => {
 
 const styles = StyleSheet.create({
     lightContainer: {
-        backgroundColor: 'white',
-        color: 'black',
+        backgroundColor: '#F5F5F5',
+        color: '#202122',
     },
     darkContainer: {
-        backgroundColor: '#242C40',
-        color: 'white',
+        backgroundColor: '#202124',
+        color: '#bdc1c6',
     },
 });
 

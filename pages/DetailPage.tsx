@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, Image, Dimensions, StyleSheet, SafeAreaView, ScrollView, useColorScheme } from 'react-native'
+import { Text, Button, Image, Dimensions, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 import DarkMode from '../components/DarkMode';
 import { Recipe } from '../data';
 
@@ -15,7 +15,7 @@ const DetailPage = ({ onGoBack, recipe }: Props) => {
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <Text style={[styles.textStyle, themeTextStyle]}>{recipe.name}</Text>
-                <Image source={{ uri: recipe.imageUrl }} style={{ width: Dimensions.get('screen').width * 0.7, height: 300 }} />
+                <Image source={{ uri: recipe.imageUrl }} style={styles.imageStyle} />
                 <Text style={[styles.textStyle, themeTextStyle]}>Beskrivning</Text>
                 <Text style={[themeTextStyle]}>{recipe.description}</Text>
                 <Text style={[styles.textStyle, themeTextStyle]}>Ingredienser</Text>
@@ -55,12 +55,14 @@ const styles = StyleSheet.create({
         fontSize: 20,
         margin: 5,
     },
-    lightThemeText: {
-        color: '#242C40',
-    },
-    darkThemeText: {
-        color: '#D0D0C0',
-    },
+    imageStyle: {
+        width: Dimensions.get('screen').width * 0.8,
+        height: Dimensions.get('screen').height * 0.4,
+        borderRadius: 5 / 2,
+        overflow: "hidden",
+        borderColor: 'gray',
+        borderWidth: 2,
+    }
 });
 
 export default DetailPage;
