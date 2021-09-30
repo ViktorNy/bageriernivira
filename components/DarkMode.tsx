@@ -1,7 +1,7 @@
 import { useColorScheme, StyleSheet } from "react-native";
 
 const DarkMode = () => {
-    let colorScheme = useColorScheme();
+    let colorScheme = 'light';
     let themeContainerStyle;
 
     if (colorScheme === 'dark') {

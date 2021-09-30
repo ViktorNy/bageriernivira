@@ -58,10 +58,6 @@ const styles = StyleSheet.create({
     imageStyle: {
         width: Dimensions.get('screen').width * 0.8,
         height: Dimensions.get('screen').height * 0.4,
-        borderRadius: 5 / 2,
-        overflow: "hidden",
-        borderColor: 'gray',
-        borderWidth: 2,
     }
 });
 
