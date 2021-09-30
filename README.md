@@ -23,6 +23,10 @@
 + KeepAwake - https://docs.expo.dev/versions/v42.0.0/sdk/keep-awake/
 + ScreenCapture - https://docs.expo.dev/versions/v42.0.0/sdk/screen-capture/
 
+### Extern modul
+
++
+
 
 ## G-Krav
 
