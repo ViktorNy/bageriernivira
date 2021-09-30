@@ -1,27 +1,21 @@
 
-import React, { useState } from "react";
+import * as Speech from 'expo-speech';
+import React from "react";
 import {
-  Button,
   Dimensions,
   Image,
   ScrollView,
   StyleSheet,
   Text,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
-import { Recipe } from "../data";
-import * as Speech from 'expo-speech';
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
-// interface Props {
-//     recipe: Recipe
-// }
-
 const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
-  navigation.setOptions({title: route.params.recipe.name}); // Fråga Davey Jones
+  navigation.setOptions({ title: route.params.recipe.name }); // Fråga Davey Jones
 
   const speak = (textToSay: string, counter?: number) => {
     Speech.getAvailableVoicesAsync().then(voices => {
@@ -38,7 +32,6 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
   }
 
   return (
-
     <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollViewContainer}
