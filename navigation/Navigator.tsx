@@ -21,7 +21,6 @@ export type RecipeStackScreenProx<Screen extends keyof RecipeStackListParams> = 
 export const Navigator = () => {
     const [value, setValue] = React.useState(false);
     const [scheme, setScheme] = React.useState('');
-    const { colors } = useTheme();
 
     useEffect(() => {
         if (scheme === 'light') {
