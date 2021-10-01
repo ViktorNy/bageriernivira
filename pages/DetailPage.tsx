@@ -39,7 +39,7 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
             >
                 <Image
                     source={{ uri: route.params.recipe.imageUrl }}
-                    style={{ width: Dimensions.get("screen").width * 0.7, height: 300 }}
+                    style={{ width: Dimensions.get("screen").width * 0.7, height: 300, margin: 10 }}
                 />
                 <Text style={[{ color: colors.text }, styles.textStyle]}>Beskrivning</Text>
                 <Text style={{ color: colors.text }}>{route.params.recipe.description}</Text>
