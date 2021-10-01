@@ -1,3 +1,4 @@
+import { useTheme } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import React from "react";
 import {
@@ -11,12 +12,12 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
-import DarkMode from '../components/DarkMode';
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
 const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     navigation.setOptions({ title: route.params.recipe.name }); // Fråga Davey Jones
-    let { themeContainerStyle } = DarkMode();
+    const { colors } = useTheme();
+
     const speak = (textToSay: string, counter?: number) => {
         Speech.getAvailableVoicesAsync().then(voices => {
             if (voices.length > 0) {
@@ -32,26 +33,25 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     }
 
     return (
-        <SafeAreaView style={[styles.container, themeContainerStyle]}>
+        <SafeAreaView style={styles.container}>
             <ScrollView
                 contentContainerStyle={styles.scrollViewContainer}
                 style={{ width: "100%" }}
             >
-                {/* <Text>{route.params.recipe.name}</Text> */}
                 <Image
                     source={{ uri: route.params.recipe.imageUrl }}
                     style={{ width: Dimensions.get("screen").width * 0.7, height: 300 }}
                 />
-                <Text style={[styles.textStyle, themeContainerStyle]}>Beskrivning</Text>
-                <Text style={[themeContainerStyle]}>{route.params.recipe.description}</Text>
-                <Text style={[styles.textStyle, themeContainerStyle]}>Ingredienser</Text>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Beskrivning</Text>
+                <Text style={{ color: colors.text }}>{route.params.recipe.description}</Text>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Ingredienser</Text>
                 <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.ingredients.map((item) => (
                         <CustomInstruction key={item} text={item} />
                     ))}
                 </View>
-                <Text style={[styles.textStyle, themeContainerStyle]}>Gör så här</Text>
-                <View style={[styles.ingredientInstructionContainer, themeContainerStyle]}>
+                <Text style={[{ color: colors.text }, styles.textStyle]}>Gör så här</Text>
+                <View style={styles.ingredientInstructionContainer}>
                     {route.params.recipe.instructions.map((item) => (
                         <CustomCheckBox key={item} text={item} speak={speak} />
                     ))}
@@ -64,7 +64,6 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
@@ -86,6 +85,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         fontWeight: "bold",
+        fontSize: 16
     },
     Checkbox: {
         margin: 1,
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     ingredientInstructionContainer: {
         display: "flex",
         textAlign: "center",
-        // marginLeft: 10,
     },
 });
 

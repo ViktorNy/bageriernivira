@@ -10,7 +10,7 @@ const CategoryPage = ({ navigation }: RecipeStackScreenProx<'Category'>) => {
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 <View style={styles.container}>
                     {categories.map((cat) => (
-                        <TouchableOpacity key={cat.id} onPress={() => navigation.navigate('Home', {filter: cat.filterName})}>
+                        <TouchableOpacity key={cat.id} onPress={() => navigation.navigate('Home', { filter: cat.filterName })}>
                             <ImageBackground style={styles.imageStretch} source={{ uri: cat.image }}>
                                 <Text style={styles.nameStyle}>{cat.textName}</Text>
                             </ImageBackground>
@@ -46,16 +46,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     imageStretch: {
-        marginBottom: 20,
-        width: '100%',
+        minWidth: '95%',
         height: 200,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderRadius: 1,
+        overflow: "hidden",
+        shadowColor: "black",
+        elevation: 5,
+        marginBottom: 10,
     },
     nameStyle: {
         position: 'absolute',
-        paddingLeft: 10,
+        padding: 5,
         backgroundColor: 'rgba(255,255,255,0.7)',
-        color: 'black'
+        color: 'black',
+        width: '100%',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 });
 

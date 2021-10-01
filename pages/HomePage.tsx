@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Button, Text } from 'react-native';
-import { categories, Recipe, recipeArray } from '../data';
+import { ScrollView, StyleSheet } from 'react-native';
+import { recipeArray } from '../data';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RecipeCard from '../components/RecipeCard'
 import { RecipeStackScreenProx } from '../navigation/Navigator';
-import DarkMode from '../components/DarkMode';
 
 const HomePage = ({ navigation, route }: RecipeStackScreenProx<'Home'>) => {
     const [clonedRecipeArray, setClonedRecipeArray] = useState(recipeArray);
-    let { themeContainerStyle } = DarkMode();
 
     useEffect(() => {
         if (route.params.filter === 'all' || !route.params.filter) {
             setClonedRecipeArray(recipeArray);
+
         }
         else {
             setClonedRecipeArray(recipeArray.filter((recipe) => recipe.category === route.params.filter));
@@ -21,8 +20,8 @@ const HomePage = ({ navigation, route }: RecipeStackScreenProx<'Home'>) => {
 
 
     return (
-        <SafeAreaView style={[styles.container, themeContainerStyle]}>
-            {/* Find better way to display category text*/}
+        <SafeAreaView style={[styles.container]}>
+
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 {clonedRecipeArray.map((recipe) => (
                     <RecipeCard navigator={navigation} recipe={recipe} key={recipe.id} />
@@ -56,7 +55,5 @@ const styles = StyleSheet.create({
         paddingTop: 10,
     }
 });
-
-// {categories.find(x => x.filterName === route.params.filter)?.textName}
 
 export default HomePage

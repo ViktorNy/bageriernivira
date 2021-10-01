@@ -1,18 +1,16 @@
+import { useTheme } from "@react-navigation/native";
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import DarkMode from "./DarkMode";
 
 interface InstructionProp {
   text: string;
 }
 
 const CustomInstruction = ({ text }: InstructionProp) => {
-  let { themeContainerStyle } = DarkMode();
+  const { colors } = useTheme();
   return (
     <View key={text} style={styles.section}>
-
-      <Text style={[themeContainerStyle]}>{'\u2022' + " " + text}</Text>
-
+      <Text style={{ color: colors.text }}>{'\u2022' + " " + text}</Text>
     </View>
   );
 };
