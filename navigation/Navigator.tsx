@@ -47,7 +47,7 @@ export const Navigator = () => {
                             (
                                 <MaterialIcons
                                     name="menu-book"
-                                    size={24}
+                                    size={42}
                                     color={'#6082B6'}
                                     onPress={() => navigation.navigate('Category')}
                                 />
