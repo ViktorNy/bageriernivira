@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
-        padding: 20,
         flexDirection: 'column'
     },
     scrollView: {
@@ -36,8 +35,7 @@ const styles = StyleSheet.create({
     scrollViewContainer: {
         display: 'flex',
         alignItems: 'center',
-        marginLeft: 10,
-        marginRight: 10
+        padding: 10
     },
     opacity: {
         backgroundColor: '#DDDDDD'
