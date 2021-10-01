@@ -21,7 +21,6 @@ const HomePage = ({ navigation, route }: RecipeStackScreenProx<'Home'>) => {
 
     return (
         <SafeAreaView style={[styles.container]}>
-
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
                 {clonedRecipeArray.map((recipe) => (
                     <RecipeCard navigator={navigation} recipe={recipe} key={recipe.id} />
@@ -37,14 +36,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        padding: 20,
         flexDirection: 'column',
     },
     scrollViewContainer: {
         display: 'flex',
         alignItems: 'center',
-        marginLeft: 10,
-        marginRight: 10
+        padding: 10
     },
     opacity: {
         backgroundColor: '#DDDDDD'

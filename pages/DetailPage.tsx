@@ -1,6 +1,6 @@
 import { useTheme } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
-import React from "react";
+import React, { useEffect } from "react";
 import {
     Dimensions,
     Image,
@@ -15,19 +15,18 @@ import CustomInstruction from "../components/CustomInstruction";
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
 const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
-    navigation.setOptions({ title: route.params.recipe.name }); // Fråga Davey Jones
     const { colors } = useTheme();
+
+    useEffect(() => {
+        Speech.getAvailableVoicesAsync();
+        navigation.setOptions({ title: route.params.recipe.name });
+    }, [])
+    //Speeech måste kallas två gånger, annars fungerar en inte
 
     const speak = (textToSay: string, counter?: number) => {
         Speech.getAvailableVoicesAsync().then(voices => {
-            if (voices.length > 0) {
-                if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
-                    Speech.speak(textToSay, { language: "sv-SE" });
-                }
-            } else {
-                if (!counter || counter < 10) {
-                    speak(textToSay, (counter ?? 0) + 1)
-                }
+            if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
+                Speech.speak(textToSay, { language: "sv-SE" });
             }
         });
     }
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        padding: 20,
         flexDirection: "column",
     },
     scrollView: {
