@@ -7,7 +7,7 @@ import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
-const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
+const DetailScreen = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
     const { colors } = useTheme();
 
     useEffect(() => {
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DetailPage;
+export default DetailScreen;

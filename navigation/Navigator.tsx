@@ -3,9 +3,9 @@ import { NavigationContainer, DefaultTheme, DarkTheme, useTheme } from "@react-n
 import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useEffect } from "react";
 import { Recipe } from "../data";
-import CategoryPage from "../pages/CategoryPage";
-import DetailPage from "../pages/DetailPage";
-import HomePage from "../pages/HomePage";
+import CategoryScreen from "../screens/CategoryScreen";
+import DetailScreen from "../screens/DetailScreen";
+import HomeScreen from "../screens/HomeScreen";
 import Switch from 'expo-dark-mode-switch';
 
 const Stack = createNativeStackNavigator();
@@ -36,7 +36,7 @@ export const Navigator = () => {
             <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
                 <Stack.Screen
                     name='Home'
-                    component={HomePage}
+                    component={HomeScreen}
                     initialParams={{ filter: 'all' }}
                     options={({ navigation }) => ({
                         title: 'Bageri Ernivira',
@@ -57,12 +57,13 @@ export const Navigator = () => {
 
                 <Stack.Screen
                     name='Detail'
-                    component={DetailPage}
+                    component={DetailScreen}
                 />
 
                 <Stack.Screen
                     name='Category'
-                    component={CategoryPage}
+                    component={CategoryScreen}
+                    options={{title:"Kategorier"}}
                 />
             </Stack.Navigator>
         </NavigationContainer >
