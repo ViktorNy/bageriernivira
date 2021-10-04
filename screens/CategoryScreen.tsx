@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { categories } from "../data";
 import { RecipeStackScreenProx } from "../navigation/Navigator";
 
-const CategoryPage = ({ navigation }: RecipeStackScreenProx<'Category'>) => {
+const CategoryScreen = ({ navigation }: RecipeStackScreenProx<'Category'>) => {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollViewContainer} style={{ width: '100%' }}>
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CategoryPage;
+export default CategoryScreen;
