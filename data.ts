@@ -60,10 +60,19 @@ export const recipeArray: Recipe[] = [
         ingredients: ['4 dl vetemjöl', '2 dl ljust muscovadoråsocker', '1 tsk bakpulver', '2 ägg', '75 g smör eller margarin'],
         instructions: ['Sätt ugnen på 200°C.', 'Blanda mjöl, socker och bakpulver i en matberedare eller bunke. Tillsätt ägg och matfettet skuret i mindre bitar. Blanda snabbt ihop till en deg. Lägg upp degen på en mjölad arbetsbänk och arbeta in någon av smaksättningarna.', 'Dela degen i 4 bitar och rulla ut till rullar ca 30 cm. Lägg på en plåt med bakplåtspapper.', 'Grädda mitt i ugnen ca 20 minuter.', 'Sänk värmen till 100°C. Skär rullarna medan de är varma i sneda bitar direkt på plåten. Sätt in mitt i ugnen för att torka skorporna, ca 30 minuter med ugnsluckan på glänt.', 'Olika smaksättningar: 1 dl pinjenötter och rivet skal från 2 citroner eller 1 dl solroskärnor och 1-2 tsk stötta kardemummakärnor eller 1 dl grovhackad mandel och 100 g mörk choklad (för 30 stycken)'],
         imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_63269/cf_259/sommarskorpor.jpg'
+    },
+    {
+        id: '6',
+        category: 'cake',
+        name: 'Kanelbullerulltårta',
+        description: 'Kanelbullerulltårta är precis som det låter, rulltårta och kanelbullar i samma bakverk. Den här fantastiska kanelbullerulltårtan, med smak av kardemumma i degen och kanel i fyllningen, blir en solklar och återkommande favorit när du börjat baka den.',
+        ingredients: ['1 tsk hela kardemummakärnor ', '3 ägg ', '1 äggvita (ägggulan änvänds till fyllningen)', '1 1/2 dl strösocker ', '1 dl potatismjöl ', '1 tsk bakpulver ', '1/2 msk olja (till att smörja bakpappret) ', '100 g rumsvarmt smör ', '2 dl florsocker ', '1 msk malen kanel ', '1 äggula ', '1 msk pärlsocker (till bakpappret) '],
+        instructions: ['Botten: Sätt ugnen på 225°C.', 'Mortla kardemumman.', 'Vispa ägg, äggvita, kardemumma och socker vitt och pösigt. Blanda potatismjöl och bakpulver och vänd ner i äggsmeten.', 'Lägg ut ett bakplåtspapper på en plåt och smörj med oljan. Bred ut smeten och grädda mitt i ugnen ca 5 minuter, eller tills kakan får en fin brun färg.', 'Fyllning: Vispa smör, florsocker och kanel poröst med en elvisp. Rör ner äggulan.', 'Strö ut pärlsockret på en tredjedel(längs långsidan) av ett bakplåtspapper.', 'Botten: Stjälp upp kakan på det sockrade pappret. Dra bort papperet som kakan gräddats på. Låt den kallna. Bred ut fyllningen på kakan och rulla ihop den (börja rulla där pappret inte har något pärlsocker). Låt rulltårtan ligga kallt en stund innan den serveras.'],
+        imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_232420/cf_259/kanelbullerulltarta.jpg'
     }
 ]
 
-export const categories : Catagory[] = [
+export const categories: Catagory[] = [
     {
         id: '0',
         filterName: 'all',
