@@ -1,14 +1,7 @@
 import { useTheme } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import React, { useEffect } from "react";
-import {
-    Dimensions,
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View
-} from "react-native";
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
@@ -68,25 +61,15 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: "column",
     },
-    scrollView: {
-        backgroundColor: "pink",
-        marginHorizontal: 20,
-    },
     scrollViewContainer: {
         display: "flex",
         alignItems: "center",
         marginLeft: 10,
         marginRight: 10,
     },
-    opacity: {
-        backgroundColor: "#DDDDDD",
-    },
     textStyle: {
         fontWeight: "bold",
         fontSize: 16
-    },
-    Checkbox: {
-        margin: 1,
     },
     ingredientInstructionContainer: {
         display: "flex",

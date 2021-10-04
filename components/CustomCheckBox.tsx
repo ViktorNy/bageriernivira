@@ -1,7 +1,7 @@
 import { useTheme } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react"
-import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 interface IngredientProp {
   text: string;
@@ -35,9 +35,6 @@ const styles = StyleSheet.create({
   instructionStyleCrossed: {
     textDecorationLine: 'line-through'
   },
-  checkBox: {
-    color: 'green'
-  }
 })
 
 export default CustomCheckBox;
