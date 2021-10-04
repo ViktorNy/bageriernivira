@@ -43,14 +43,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10
     },
-    opacity: {
-        backgroundColor: '#DDDDDD'
-    },
-    categoryText: {
-        color: 'black',
-        fontSize: 25,
-        paddingTop: 10,
-    }
 });
 
 export default HomePage

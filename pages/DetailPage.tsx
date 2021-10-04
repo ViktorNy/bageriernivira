@@ -1,14 +1,7 @@
 import { useTheme } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 import React, { useEffect } from "react";
-import {
-    Dimensions,
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View
-} from "react-native";
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomCheckBox from "../components/CustomCheckBox";
 import CustomInstruction from "../components/CustomInstruction";
@@ -39,7 +32,7 @@ const DetailPage = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) => {
             >
                 <Image
                     source={{ uri: route.params.recipe.imageUrl }}
-                    style={{ width: Dimensions.get("screen").width * 0.7, height: 300 }}
+                    style={{ width: Dimensions.get("screen").width * 0.7, height: 300, margin: 10 }}
                 />
                 <Text style={[{ color: colors.text }, styles.textStyle]}>Beskrivning</Text>
                 <Text style={{ color: colors.text }}>{route.params.recipe.description}</Text>
@@ -68,25 +61,15 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: "column",
     },
-    scrollView: {
-        backgroundColor: "pink",
-        marginHorizontal: 20,
-    },
     scrollViewContainer: {
         display: "flex",
         alignItems: "center",
         marginLeft: 10,
         marginRight: 10,
     },
-    opacity: {
-        backgroundColor: "#DDDDDD",
-    },
     textStyle: {
         fontWeight: "bold",
         fontSize: 16
-    },
-    Checkbox: {
-        margin: 1,
     },
     ingredientInstructionContainer: {
         display: "flex",

@@ -28,20 +28,10 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'column'
     },
-    scrollView: {
-        backgroundColor: 'pink',
-        marginHorizontal: 20,
-    },
     scrollViewContainer: {
         display: 'flex',
         alignItems: 'center',
         padding: 10
-    },
-    opacity: {
-        backgroundColor: '#DDDDDD'
-    },
-    textStyle: {
-        fontWeight: 'bold'
     },
     imageStretch: {
         minWidth: '95%',
