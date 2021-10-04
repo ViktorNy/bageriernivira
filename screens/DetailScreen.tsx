@@ -11,10 +11,9 @@ const DetailScreen = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) =>
     const { colors } = useTheme();
 
     useEffect(() => {
-        Speech.getAvailableVoicesAsync();
+        Speech.getAvailableVoicesAsync(); //Speeech måste kallas två gånger, annars fungerar den inte
         navigation.setOptions({ title: route.params.recipe.name });
     }, [])
-    //Speeech måste kallas två gånger, annars fungerar en inte
 
     const speak = (textToSay: string, counter?: number) => {
         Speech.getAvailableVoicesAsync().then(voices => {
@@ -32,7 +31,7 @@ const DetailScreen = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) =>
             >
                 <Image
                     source={{ uri: route.params.recipe.imageUrl }}
-                    style={{ width: Dimensions.get("screen").width * 0.7, height: 300, margin: 10 }}
+                    style={styles.imageStyle}
                 />
                 <Text style={[{ color: colors.text }, styles.textStyle]}>Beskrivning</Text>
                 <Text style={{ color: colors.text }}>{route.params.recipe.description}</Text>
@@ -75,6 +74,11 @@ const styles = StyleSheet.create({
         display: "flex",
         textAlign: "center",
     },
+    imageStyle: {
+        width: Dimensions.get("screen").width * 0.7,
+        height: Dimensions.get("screen").width * 0.7,
+        margin: 10
+    }
 });
 
 export default DetailScreen;

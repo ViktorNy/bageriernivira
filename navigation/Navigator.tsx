@@ -40,9 +40,7 @@ export const Navigator = () => {
                     initialParams={{ filter: 'all' }}
                     options={({ navigation }) => ({
                         title: 'Bageri Ernivira',
-                        headerLeft: () => (
-                            <Switch value={value} onChange={value => setValue(value)} />
-                        ),
+                        headerLeft: () => (<Switch value={value} onChange={value => setValue(value)} />),
                         headerRight: () => (
                             (
                                 <MaterialIcons
@@ -63,7 +61,7 @@ export const Navigator = () => {
                 <Stack.Screen
                     name='Category'
                     component={CategoryScreen}
-                    options={{title:"Kategorier"}}
+                    options={{ title: "Kategorier" }}
                 />
             </Stack.Navigator>
         </NavigationContainer >
