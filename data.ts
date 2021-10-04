@@ -16,15 +16,7 @@ export interface Catagory {
 }
 
 export const recipeArray: Recipe[] = [
-    {
-        id: '1',
-        category: 'pie',
-        name: 'Melon- och myntapaj',
-        description: 'Lyxig och god melon- och myntapaj som passar perfekt till efterrätt. Den söta piel de sapomelonen balanseras fint in i fyllningen med saft från limen och rostad kokos. ',
-        ingredients: ['3 dl vetemjöl', '100 g smör eller margarin', '2 msk strösocker', '2 msk vatten', '1-2 lime', '1 1/2 dl vitt vin eller matlagningsvin', '1 dl vatten', '1/2 dl flytande honung', '2 1/2 msk majsstärkelse', '1 dl riven kokos', '1 piel de sapomelon (1 melon motsvarar ca 1 kg)', '1 kruka mynta', '2 msk finstrimlad samt till garnering', '2 dl crème fraiche', '1 msk florsocker', '1/2 tsk vaniljsocker'],
-        instructions: ['Sätt ugnen på 225°C.', 'Blanda samman mjöl, matfett och socker. Tillsätt vatten och arbeta snabbt ihop till en deg.', 'Kavla eller tryck ut degen i en form med löstagbar kant, 23 cm diameter. Degen ska gå upp 3-4 cm upp på kanterna.', 'Grädda pajskalet mitt i ugnen 12-15 min. Låt kallna.', 'Fyllning: Tvätta och riv det yttersta skalet av limen. Pressa ut 2 msk saft(för 6 port). Koka upp vin, vatten, limesaft, honung och majsstärkelse i en kastrull under vispning.', 'Sjud i 1-2 minuter. Ta av kastrullen från värmen och låt krämen svalna.', 'Rosta kokosen i en torr stekpanna. Låt kokosen svalna. Skala och kärna ur melonen. Skär den i små tärningar. Strimla 2 msk mynta(för 6 port). Blanda melontärningar, kokos, mynta och lime- honungskrämen.', ' Vispa crème friache så att den blir fast tillsammans med florsocker och vaniljsocker. Lägg i en engångsspritspåse.', 'Häll fyllningen i pajskalet. Spritsa crème fraiche på fyllningen. Garnera med myntablad och finrivet limeskal.'],
-        imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_231009/cf_259/melon-_och_myntapaj.jpg'
-    },
+
     {
         id: '2',
         category: 'cookie',
@@ -51,6 +43,15 @@ export const recipeArray: Recipe[] = [
         ingredients: [' 100 g margarin (rumsvarmt)', '1 dl brun farin', '1/2 tsk vaniljsocker', '1 ägg', ' 2 dl vetemjöl', '1 tsk bakpulver', '1 krm salt', ' 100 g mörk blockchoklad', '50 g hasselnötter'],
         instructions: ['Sätt ugnen på 200°C.', 'Arbeta margarin, farin eller socker och vaniljsocker med elvisp i en skål. Tillsätt ägget och blanda väl. Blanda mjöl, bakpulver och salt och tillsätt det.', 'Grovhacka blockchokladen och hasselnötterna. Rör ner dem i smeten.', 'Klicka 1-2 msk smet med ett par centimeters mellanrum på plåtar med bakdduk/bakpapper. Grädda ca 10 minuter. Låt svalna på ugnsgaller.'],
         imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_30072/cf_259/chocolate_chip_cookies.jpg'
+    },
+    {
+        id: '1',
+        category: 'pie',
+        name: 'Melon- och myntapaj',
+        description: 'Lyxig och god melon- och myntapaj som passar perfekt till efterrätt. Den söta piel de sapomelonen balanseras fint in i fyllningen med saft från limen och rostad kokos. ',
+        ingredients: ['3 dl vetemjöl', '100 g smör eller margarin', '2 msk strösocker', '2 msk vatten', '1-2 lime', '1 1/2 dl vitt vin eller matlagningsvin', '1 dl vatten', '1/2 dl flytande honung', '2 1/2 msk majsstärkelse', '1 dl riven kokos', '1 piel de sapomelon (1 melon motsvarar ca 1 kg)', '1 kruka mynta', '2 msk finstrimlad samt till garnering', '2 dl crème fraiche', '1 msk florsocker', '1/2 tsk vaniljsocker'],
+        instructions: ['Sätt ugnen på 225°C.', 'Blanda samman mjöl, matfett och socker. Tillsätt vatten och arbeta snabbt ihop till en deg.', 'Kavla eller tryck ut degen i en form med löstagbar kant, 23 cm diameter. Degen ska gå upp 3-4 cm upp på kanterna.', 'Grädda pajskalet mitt i ugnen 12-15 min. Låt kallna.', 'Fyllning: Tvätta och riv det yttersta skalet av limen. Pressa ut 2 msk saft(för 6 port). Koka upp vin, vatten, limesaft, honung och majsstärkelse i en kastrull under vispning.', 'Sjud i 1-2 minuter. Ta av kastrullen från värmen och låt krämen svalna.', 'Rosta kokosen i en torr stekpanna. Låt kokosen svalna. Skala och kärna ur melonen. Skär den i små tärningar. Strimla 2 msk mynta(för 6 port). Blanda melontärningar, kokos, mynta och lime- honungskrämen.', ' Vispa crème friache så att den blir fast tillsammans med florsocker och vaniljsocker. Lägg i en engångsspritspåse.', 'Häll fyllningen i pajskalet. Spritsa crème fraiche på fyllningen. Garnera med myntablad och finrivet limeskal.'],
+        imageUrl: 'https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_231009/cf_259/melon-_och_myntapaj.jpg'
     },
     {
         id: '5',
