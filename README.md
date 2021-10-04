@@ -23,14 +23,13 @@
 + SafeAreaContext - https://docs.expo.dev/versions/v42.0.0/sdk/safe-area-context/
 + Speech - https://docs.expo.dev/versions/v42.0.0/sdk/speech/
 + StatusBar - https://docs.expo.dev/versions/v42.0.0/sdk/status-bar/
-+ Checkbox - https://docs.expo.dev/versions/v42.0.0/sdk/checkbox/![Uploading Ernivira.png…]()
-
++ Checkbox - https://docs.expo.dev/versions/v42.0.0/sdk/checkbox/
 + KeepAwake - https://docs.expo.dev/versions/v42.0.0/sdk/keep-awake/
 + ScreenCapture - https://docs.expo.dev/versions/v42.0.0/sdk/screen-capture/
 
 ### Extern modul
 
-+
++ Expo Dark Mode Switch - https://www.npmjs.com/package/expo-dark-mode-switch
 
 
 ## G-Krav
@@ -48,6 +47,6 @@
 
  - [x]  Alla punkter för godkänt är uppfyllda
  - [x] React Navigation används för att skapa en bättre upplevelse i appen.
- - [ ] Ytterligare en valfri extern modul används i projektet.
+ - [x] Ytterligare en valfri extern modul används i projektet.
  - [x] Prototyper för applikation tas fram innan den implementeras. Bilder på prototypen
     skall finnas i projektet vid inlämning.
