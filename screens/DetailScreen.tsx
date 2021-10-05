@@ -15,10 +15,12 @@ const DetailScreen = ({ navigation, route }: RecipeStackScreenProx<'Detail'>) =>
         navigation.setOptions({ title: route.params.recipe.name });
     }, [])
 
-    const speak = (textToSay: string, counter?: number) => {
+    const speak = (textToSay: string) => {
         Speech.getAvailableVoicesAsync().then(voices => {
-            if (voices.findIndex(voice => voice.language === "sv-SE") >= 0) {
-                Speech.speak(textToSay, { language: "sv-SE" });
+            if (voices.findIndex(voice =>
+                voice.language === "sv-SE") >= 0) {
+                Speech.speak(textToSay,
+                    { language: "sv-SE" });
             }
         });
     }
