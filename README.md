@@ -8,11 +8,8 @@ Vi har skapat en kokboks-app för bakverk. Den är byggd med React Native där n
 
 ## <p align = "center">Bygg och starta projektet</p>
 
-#### Bygg
-+ npm install
-
-#### Starta
-+ npm start
+``` npm install ```
+``` npm start ```
 
 ## <p align = "center">Komponenter</p> 
 
