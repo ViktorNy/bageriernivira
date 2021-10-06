@@ -4,7 +4,17 @@
 
 ## <p align = "center">Beskrivning av projektet </p>
 
-## Komponenter 
+Vi har skapat en kokboks-app för bakverk. Den är byggd med React Native där nedan komponenter används från React Native och Expo SDK. Appen ger möjlighet att sortera recepten efter kategori (t.ex. Kakor). Väl inne på ett recept finns det en beskrivande text samt lista på ingredienser och instruktioner. 
+
+## <p align = "center">Bygg och starta projektet</p>
+
+#### Bygg
++ npm install
+
+#### Starta
++ npm start
+
+## <p align = "center">Komponenter</p> 
 
 ### React Native
 
